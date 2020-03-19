@@ -45,5 +45,16 @@ namespace calculatriceDotNet
             }
             lblCalculation.Content += (sender as Button).Content.ToString();
         }
+
+        private void BtnClearStep_Click(object sender, RoutedEventArgs e)
+        {
+            lblCalculation.Content = "0";
+        }
+
+        private void BtnClear_Click(object sender, RoutedEventArgs e)
+        {
+            lblCalculation.Content = "0";
+            lblCalculationPrev.Content = "";
+        }
     }
 }
