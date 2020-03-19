@@ -30,7 +30,7 @@
         <Button x:Name="btnMultiplication" Content="*" HorizontalAlignment="Left" Height="81" Margin="398,444,0,0" VerticalAlignment="Top" Width="114" FontSize="72"/>
         <ListBox x:Name="lstBoxHistory" HorizontalAlignment="Left" Height="770" Margin="534,69,0,0" VerticalAlignment="Top" Width="248" FontSize="36"/>  
         <Label x:Name="lblHistory" Content="Historique" HorizontalAlignment="Left" Height="59" Margin="534,10,0,0" VerticalAlignment="Top" Width="174" FontSize="36"/>
-        <Label x:Name="lblCalculationPrev" Content="Label" HorizontalAlignment="Left" Height="59" Margin="10,10,0,0" VerticalAlignment="Top" Width="502" FontSize="24"/>
+        <Label x:Name="lblCalculationPrev" Content="" HorizontalAlignment="Left" Height="59" Margin="10,10,0,0" VerticalAlignment="Top" Width="502" FontSize="24"/>
         <Button x:Name="btnClearHistory" Content="C" HorizontalAlignment="Left" Height="54" Margin="708,10,0,0" VerticalAlignment="Top" Width="74" FontSize="36" FontWeight="Bold" Click="btnClearHistory_Click"/>
         <Rectangle Fill="Black" HorizontalAlignment="Left" Height="869" Margin="525,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="1" OpacityMask="Black"/>
         <Button x:Name="btnOpenBracket" Content="(" HorizontalAlignment="Left" Height="81" Margin="10,233,0,0" VerticalAlignment="Top" Width="114" FontSize="48" Click="BtnNumber_Click"/>
