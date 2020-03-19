@@ -23,6 +23,27 @@ namespace calculatriceDotNet
         public MainWindow()
         {
             InitializeComponent();
+
+
+
+
+
+
+
+        }
+
+        private void WriteNewNumber(string number)
+        {
+            
+        }
+
+        private void BtnNumber_Click(object sender, RoutedEventArgs e)
+        {
+            if (lblCalculation.Content.ToString() == "0")
+            {
+                lblCalculation.Content = "";
+            }
+            lblCalculation.Content += (sender as Button).Content.ToString();
         }
     }
 }
