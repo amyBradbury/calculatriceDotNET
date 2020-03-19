@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Media.TextFormatting;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
@@ -44,6 +45,40 @@ namespace calculatriceDotNet
                 lblCalculation.Content = "";
             }
             lblCalculation.Content += (sender as Button).Content.ToString();
+        }
+
+        private void btnEquals_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.lblCalculation.HasContent && !this.lblCalculation.Content.Equals("0"))
+            {
+                String calculation = this.lblCalculation.Content.ToString();
+                String result = resultCalc(calculation);
+
+                calculation = String.Concat(calculation, "=", result);
+
+                setPreviousCalc(calculation);
+                addCalcToHistory(calculation);
+            }
+        }
+
+        private String resultCalc(String calc)
+        {
+            // TODO : calculer le résultat de l'équation et le renvoyer sous forme de chaine
+            return "?";
+        }
+
+        private void setPreviousCalc(String calc)
+        {
+            this.lblCalculationPrev.Content = calc;
+        }
+        private void addCalcToHistory(String calc)
+        {
+            lstBoxHistory.Items.Add(calc);
+        }
+
+        private void btnClearHistory_Click(object sender, RoutedEventArgs e)
+        {
+            lstBoxHistory.Items.Clear();
         }
     }
 }
