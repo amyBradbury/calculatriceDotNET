@@ -24,13 +24,6 @@ namespace calculatriceDotNet
         public MainWindow()
         {
             InitializeComponent();
-
-
-
-
-
-
-
         }
 
         private void BtnNumber_Click(object sender, RoutedEventArgs e)
@@ -44,23 +37,24 @@ namespace calculatriceDotNet
 
         private void BtnClearStep_Click(object sender, RoutedEventArgs e)
         {
-            lblCalculation.Content = "0";
+            clearCalcContent();
         }
 
         private void BtnClear_Click(object sender, RoutedEventArgs e)
         {
-            lblCalculation.Content = "0";
+            clearCalcContent();
             lblCalculationPrev.Content = "";
         }
 
         private void btnEquals_Click(object sender, RoutedEventArgs e)
         {
-            if (this.lblCalculation.HasContent && !this.lblCalculation.Content.Equals("0"))
+            if (lblCalculation.HasContent && !lblCalculation.Content.Equals("0"))
             {
-                String calculation = this.lblCalculation.Content.ToString();
-                String result = resultCalc(calculation);
+                string calculation = lblCalculation.Content.ToString();
+                string result = resultCalc(calculation);
+                clearCalcContent();
 
-                calculation = String.Concat(calculation, "=", result);
+                calculation = string.Concat(calculation, "=", result);
 
                 setPreviousCalc(calculation);
                 addCalcToHistory(calculation);
@@ -71,6 +65,11 @@ namespace calculatriceDotNet
         {
             // TODO : calculer le résultat de l'équation et le renvoyer sous forme de chaine
             return "?";
+        }
+
+        private void clearCalcContent()
+        {
+            lblCalculation.Content = "0";
         }
 
         private void setPreviousCalc(String calc)
@@ -85,6 +84,7 @@ namespace calculatriceDotNet
         private void btnClearHistory_Click(object sender, RoutedEventArgs e)
         {
             lstBoxHistory.Items.Clear();
+            lblCalculationPrev.Content = "";
         }
     }
 }
