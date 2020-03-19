@@ -32,11 +32,6 @@ namespace calculatriceDotNet
 
         }
 
-        private void WriteNewNumber(string number)
-        {
-            
-        }
-
         private void BtnNumber_Click(object sender, RoutedEventArgs e)
         {
             if (lblCalculation.Content.ToString() == "0")
