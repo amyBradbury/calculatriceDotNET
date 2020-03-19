@@ -5,8 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:calculatriceDotNet"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="900" Width="800">
     <Grid>
-        
+        <Label x:Name="lblCalculation" Content="Label" HorizontalAlignment="Left" Height="140" Margin="10,69,0,0" VerticalAlignment="Top" Width="502" FontSize="36"/>
+        <Button x:Name="btnSquare" Content="x²" HorizontalAlignment="Left" Height="98" Margin="10,237,0,0" VerticalAlignment="Top" Width="114" FontSize="48"/>
+        <Button x:Name="btnRoot" Content="Rac2" HorizontalAlignment="Left" Height="98" Margin="140,237,0,0" VerticalAlignment="Top" Width="114" FontSize="48"/>
+        <Button x:Name="btnModulo" Content="%" HorizontalAlignment="Left" Height="98" Margin="269,237,0,0" VerticalAlignment="Top" Width="115" FontSize="48"/>
+        <Button x:Name="btnDivide" Content="/" HorizontalAlignment="Left" Height="98" Margin="398,237,0,0" VerticalAlignment="Top" Width="114" FontSize="48"/>
+        <Button x:Name="btn7" Content="7" HorizontalAlignment="Left" Height="98" Margin="10,361,0,0" VerticalAlignment="Top" Width="114" FontSize="48"/>
+        <Button x:Name="btn4" Content="4" HorizontalAlignment="Left" Height="98" Margin="10,487,0,0" VerticalAlignment="Top" Width="114" FontSize="48"/>
+        <Button x:Name="btn1" Content="1" HorizontalAlignment="Left" Height="98" Margin="10,613,0,0" VerticalAlignment="Top" Width="114" FontSize="48"/>
+        <Button x:Name="btnSuppr" Content="&lt;-" HorizontalAlignment="Left" Height="98" Margin="10,741,0,0" VerticalAlignment="Top" Width="114" FontSize="48"/>
+        <Button x:Name="btn6" Content="6" HorizontalAlignment="Left" Height="98" Margin="269,487,0,0" VerticalAlignment="Top" Width="115" FontSize="48"/>
+        <Button x:Name="btn9" Content="9" HorizontalAlignment="Left" Height="98" Margin="269,361,0,0" VerticalAlignment="Top" Width="115" FontSize="48"/>
+        <Button x:Name="btn0" Content="0" HorizontalAlignment="Left" Height="98" Margin="140,741,0,0" VerticalAlignment="Top" Width="114" FontSize="48"/>
+        <Button x:Name="btn2" Content="2" HorizontalAlignment="Left" Height="98" Margin="140,613,0,0" VerticalAlignment="Top" Width="114" FontSize="48"/>
+        <Button x:Name="btn5" Content="5" HorizontalAlignment="Left" Height="98" Margin="140,487,0,0" VerticalAlignment="Top" Width="114" FontSize="48"/>
+        <Button x:Name="btn8" Content="8" HorizontalAlignment="Left" Height="98" Margin="140,361,0,0" VerticalAlignment="Top" Width="114" FontSize="48"/>
+        <Button x:Name="btnEquals" Content="=" HorizontalAlignment="Left" Height="98" Margin="398,741,0,0" VerticalAlignment="Top" Width="114" FontSize="48"/>
+        <Button x:Name="btnComma" Content="." HorizontalAlignment="Left" Height="98" Margin="269,741,0,0" VerticalAlignment="Top" Width="115" FontSize="48"/>
+        <Button x:Name="btnPlus" Content="+" HorizontalAlignment="Left" Height="98" Margin="398,613,0,0" VerticalAlignment="Top" Width="114" FontSize="48"/>
+        <Button x:Name="btn3" Content="3" HorizontalAlignment="Left" Height="98" Margin="269,613,0,0" VerticalAlignment="Top" Width="115" FontSize="48"/>
+        <Button x:Name="btnMinus" Content="-" HorizontalAlignment="Left" Height="98" Margin="398,487,0,0" VerticalAlignment="Top" Width="114" FontSize="48"/>
+        <Button x:Name="btnMultiplication" Content="*" HorizontalAlignment="Left" Height="98" Margin="398,361,0,0" VerticalAlignment="Top" Width="114" FontSize="72"/>
+        <ListBox x:Name="lstBoxHistory" HorizontalAlignment="Left" Height="770" Margin="534,69,0,0" VerticalAlignment="Top" Width="248" FontSize="36"/>
+        <Label x:Name="lblHistory" Content="Historique" HorizontalAlignment="Left" Height="59" Margin="534,10,0,0" VerticalAlignment="Top" Width="174" FontSize="36"/>
+        <Label x:Name="lblCalculationPrev" Content="Label" HorizontalAlignment="Left" Height="59" Margin="10,10,0,0" VerticalAlignment="Top" Width="502" FontSize="24"/>
+        <Button x:Name="btnClearHistory" Content="C" HorizontalAlignment="Left" Height="54" Margin="708,10,0,0" VerticalAlignment="Top" Width="74" FontSize="36" FontWeight="Bold"/>
+        <Rectangle Fill="Black" HorizontalAlignment="Left" Height="869" Margin="525,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="1" OpacityMask="Black"/>
+
     </Grid>
 </Window>
