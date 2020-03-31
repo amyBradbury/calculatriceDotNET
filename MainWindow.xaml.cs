@@ -34,8 +34,14 @@ namespace calculatriceDotNet
             }
             switch ((sender as Button).Content.ToString())
             {
+                case ")":
+                    if (lblCalculation.Content.ToString().Length - lblCalculation.Content.ToString().Replace("(","").Length > lblCalculation.Content.ToString().Length - lblCalculation.Content.ToString().Replace(")", "").Length)
+                    {
+                        lblCalculation.Content += (sender as Button).Content.ToString();
+                    }
+                    break;
                 case ".":
-                    if (!lblCalculation.Content.ToString().Contains("."))
+                    if (!lblCalculation.Content.ToString().Contains(".") || (lblCalculation.Content.ToString().EndsWith("(") || lblCalculation.Content.ToString().EndsWith(")")))
                     {
                         if (lblCalculation.Content.ToString() == "")
                         {
