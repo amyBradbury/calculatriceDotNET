@@ -1,18 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Media.TextFormatting;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace calculatriceDotNet
 {
@@ -21,41 +11,61 @@ namespace calculatriceDotNet
     /// </summary>
     public partial class MainWindow : Window
     {
+        private List<String> expression;
         public MainWindow()
         {
             InitializeComponent();
         }
 
+        private void ActualizeLbl()
+        {
+            lblCalculation.Content = expression.ToString();
+        }
         private void BtnNumber_Click(object sender, RoutedEventArgs e)
         {
-            if (lblCalculation.Content.ToString() == "0")
+            if ((sender as Button).Content.ToString()==".")
             {
-                lblCalculation.Content = "";
+                if (!expression[expression.Count-1].ToString().Contains("."))
+                {
+                    expression[expression.Count - 1] += (sender as Button).Content.ToString();
+                }
             }
-            switch ((sender as Button).Content.ToString())
+            else
             {
-                case "<-":
-                    lblCalculation.Content=lblCalculation.Content.ToString().Remove(lblCalculation.Content.ToString().Length - 1);
-                    break;
-                case ")":
-                    if (lblCalculation.Content.ToString().Length - lblCalculation.Content.ToString().Replace("(","").Length > lblCalculation.Content.ToString().Length - lblCalculation.Content.ToString().Replace(")", "").Length)
-                    {
-                        lblCalculation.Content += (sender as Button).Content.ToString();
-                    }
-                    break;
-                case ".":
-                    if (!lblCalculation.Content.ToString().Contains(".") && !lblCalculation.Content.ToString().EndsWith("(") && !lblCalculation.Content.ToString().EndsWith(")"))
-                    {
-                        if (lblCalculation.Content.ToString() == "")
+                expression[expression.Count - 1] += (sender as Button).Content.ToString();
+            }
+        }
+
+        private void BtnOperator_Click(object sender, RoutedEventArgs e)
+        {
+            {
+                if (lblCalculation.Content.ToString() == "0")
+                    lblCalculation.Content = "";
+                switch ((sender as Button).Content.ToString())
+                {
+                    case ")":
+                        if (lblCalculation.Content.ToString().Length - lblCalculation.Content.ToString().Replace("(", "").Length > lblCalculation.Content.ToString().Length - lblCalculation.Content.ToString().Replace(")", "").Length)
                         {
-                            lblCalculation.Content = "0";
+                            lblCalculation.Content += (sender as Button).Content.ToString();
                         }
+                        break;
+                    case "<-":
+                        lblCalculation.Content = lblCalculation.Content.ToString().Remove(lblCalculation.Content.ToString().Length - 1);
+                        break;
+                    case ".":
+                        if (!lblCalculation.Content.ToString().Contains(".") && !lblCalculation.Content.ToString().EndsWith("(") && !lblCalculation.Content.ToString().EndsWith(")"))
+                        {
+                            if (lblCalculation.Content.ToString() == "")
+                            {
+                                lblCalculation.Content = "0";
+                            }
+                            lblCalculation.Content += (sender as Button).Content.ToString();
+                        }
+                        break;
+                    default:
                         lblCalculation.Content += (sender as Button).Content.ToString();
-                    }
-                    break;
-                default:
-                    lblCalculation.Content += (sender as Button).Content.ToString();
-                    break;
+                        break;
+                }
             }
         }
 
