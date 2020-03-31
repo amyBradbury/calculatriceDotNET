@@ -32,7 +32,22 @@ namespace calculatriceDotNet
             {
                 lblCalculation.Content = "";
             }
-            lblCalculation.Content += (sender as Button).Content.ToString();
+            switch ((sender as Button).Content.ToString())
+            {
+                case ".":
+                    if (!lblCalculation.Content.ToString().Contains("."))
+                    {
+                        if (lblCalculation.Content.ToString() == "")
+                        {
+                            lblCalculation.Content = "0";
+                        }
+                        lblCalculation.Content += (sender as Button).Content.ToString();
+                    }
+                    break;
+                default:
+                    lblCalculation.Content += (sender as Button).Content.ToString();
+                    break;
+            }
         }
 
         private void BtnClearStep_Click(object sender, RoutedEventArgs e)
