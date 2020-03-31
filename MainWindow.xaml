@@ -22,7 +22,7 @@
         <Button x:Name="btn7" Content="7" HorizontalAlignment="Left" Height="81" Margin="10,444,0,0" VerticalAlignment="Top" Width="114" FontSize="48" Click="BtnNumber_Click"/>
         <Button x:Name="btn8" Content="8" HorizontalAlignment="Left" Height="81" Margin="140,444,0,0" VerticalAlignment="Top" Width="114" FontSize="48" Click="BtnNumber_Click"/>
         <Button x:Name="btn9" Content="9" HorizontalAlignment="Left" Height="81" Margin="269,444,0,0" VerticalAlignment="Top" Width="115" FontSize="48" Click="BtnNumber_Click"/>
-        <Button x:Name="btnSuppr" Content="&lt;-" HorizontalAlignment="Left" Height="81" Margin="10,758,0,0" VerticalAlignment="Top" Width="114" FontSize="48"/>
+        <Button x:Name="btnSuppr" Content="&lt;-" HorizontalAlignment="Left" Height="81" Margin="10,758,0,0" VerticalAlignment="Top" Width="114" FontSize="48" Click="BtnNumber_Click"/>
         <Button x:Name="btnEquals" Content="=" HorizontalAlignment="Left" Height="81" Margin="398,758,0,0" VerticalAlignment="Top" Width="114" FontSize="48" Click="btnEquals_Click"/>
         <Button x:Name="btnComma" Content="." HorizontalAlignment="Left" Height="81" Margin="269,758,0,0" VerticalAlignment="Top" Width="115" FontSize="48" Click="BtnNumber_Click"/>
         <Button x:Name="btnPlus" Content="+" HorizontalAlignment="Left" Height="81" Margin="398,652,0,0" VerticalAlignment="Top" Width="114" FontSize="48"/>
