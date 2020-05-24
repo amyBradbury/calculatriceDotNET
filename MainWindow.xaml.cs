@@ -51,7 +51,7 @@ namespace calculatriceDotNet
                             lblCalculation.Content += (sender as Button).Content.ToString();
                         }
                         break;
-                    case "<-":
+                    case "←":
                         lblCalculation.Content = lblCalculation.Content.ToString().Remove(lblCalculation.Content.ToString().Length - 1);
                         break;
                     case ".":

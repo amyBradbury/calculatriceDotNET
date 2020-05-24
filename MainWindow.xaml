@@ -77,8 +77,8 @@
 
             <Button x:Name="btnSquare" Content="x²"         Grid.Row="1" Grid.Column="0" Style="{StaticResource DisabledButton}"/>
             <Button x:Name="btnRoot" Content="Sqrt"         Grid.Row="1" Grid.Column="1" Style="{StaticResource DisabledButton}"/>
-            <Button x:Name="btnModulo" Content="%"          Grid.Row="1" Grid.Column="2" Style="{StaticResource DisabledButton}"/>
-            <Button x:Name="btnDivide" Content="/"          Grid.Row="1" Grid.Column="3" Style="{StaticResource BasicButton}"/>
+            <Button x:Name="btnDivide" Content="/"          Grid.Row="1" Grid.Column="2" Style="{StaticResource DisabledButton}"/>
+            <Button x:Name="btnModulo" Content="%"          Grid.Row="1" Grid.Column="3" Click="BtnOperator_Click" Style="{StaticResource BasicButton}"/>
 
             <Button x:Name="btn7" Content="7"               Grid.Row="2" Grid.Column="0" Click="BtnOperator_Click" Style="{StaticResource NumberButton}"/>
             <Button x:Name="btn8" Content="8"               Grid.Row="2" Grid.Column="1" Click="BtnOperator_Click" Style="{StaticResource NumberButton}"/>
@@ -95,7 +95,7 @@
             <Button x:Name="btn3" Content="3"               Grid.Row="4" Grid.Column="2" Click="BtnOperator_Click" Style="{StaticResource NumberButton}"/>
             <Button x:Name="btnPlus" Content="+"            Grid.Row="4" Grid.Column="3" Click="BtnOperator_Click" Style="{StaticResource BasicButton}"/>
 
-            <Button x:Name="btnSuppr" Content="←"           Grid.Row="5" Grid.Column="0" Click="BtnOperator_Click" Style="{StaticResource DisabledButton}"/>
+            <Button x:Name="btnSuppr" Content="←"           Grid.Row="5" Grid.Column="0" Click="BtnOperator_Click" Style="{StaticResource BasicButton}"/>
             <Button x:Name="btn0" Content="0"               Grid.Row="5" Grid.Column="1" Click="BtnOperator_Click" Style="{StaticResource NumberButton}"/>
             <Button x:Name="btnComma" Content="."           Grid.Row="5" Grid.Column="2" Click="BtnOperator_Click" Style="{StaticResource BasicButton}"/>
             <Button x:Name="btnEquals" Content="="          Grid.Row="5" Grid.Column="3" Click="btnEquals_Click" Style="{StaticResource EqualButton}"/>
