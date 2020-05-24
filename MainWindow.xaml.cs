@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
+using System.Data;
+using System.Text;
 
 namespace calculatriceDotNet
 {
@@ -95,10 +97,19 @@ namespace calculatriceDotNet
             }
         }
 
-        private String resultCalc(String calc)
+        private string resultCalc(string calc)
         {
-            // TODO : calculer le résultat de l'équation et le renvoyer sous forme de chaine
-            return "?";
+            DataTable dt = new DataTable();
+            string v = "";
+            try
+            {
+                v = string.Concat((int)dt.Compute(calc, ""));
+            }
+            catch (Exception ex)
+            {
+                v = "ERR";
+            }
+            return v;
         }
 
         private void clearCalcContent()
