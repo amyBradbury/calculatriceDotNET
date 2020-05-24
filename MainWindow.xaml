@@ -5,38 +5,107 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:calculatriceDotNet"
         mc:Ignorable="d"
-        Title="MainWindow" Height="900" Width="800">
-    <Grid>
-        <Label x:Name="lblCalculation" Content="0" HorizontalAlignment="Left" Height="108" Margin="10,101,0,0" VerticalAlignment="Top" Width="502" FontSize="72"/>
-        <Button x:Name="btnSquare" Content="x²" HorizontalAlignment="Left" Height="81" Margin="10,341,0,0" VerticalAlignment="Top" Width="114" FontSize="48"/>
-        <Button x:Name="btnRoot" Content="Rac2" HorizontalAlignment="Left" Height="81" Margin="140,341,0,0" VerticalAlignment="Top" Width="114" FontSize="48"/>
-        <Button x:Name="btnModulo" Content="%" HorizontalAlignment="Left" Height="81" Margin="269,341,0,0" VerticalAlignment="Top" Width="115" FontSize="48"/>
-        <Button x:Name="btnDivide" Content="/" HorizontalAlignment="Left" Height="81" Margin="398,341,0,0" VerticalAlignment="Top" Width="114" FontSize="48"/>
-        <Button x:Name="btn0" Content="0" HorizontalAlignment="Left" Height="81" Margin="140,758,0,0" VerticalAlignment="Top" Width="114" FontSize="48" Click="BtnOperator_Click"/>
-        <Button x:Name="btn1" Content="1" HorizontalAlignment="Left" Height="81" Margin="10,652,0,0" VerticalAlignment="Top" Width="114" FontSize="48" Click="BtnOperator_Click"/>
-        <Button x:Name="btn2" Content="2" HorizontalAlignment="Left" Height="81" Margin="140,652,0,0" VerticalAlignment="Top" Width="114" FontSize="48" Click="BtnOperator_Click"/>
-        <Button x:Name="btn3" Content="3" HorizontalAlignment="Left" Height="81" Margin="269,652,0,0" VerticalAlignment="Top" Width="115" FontSize="48" Click="BtnOperator_Click"/>
-        <Button x:Name="btn4" Content="4" HorizontalAlignment="Left" Height="81" Margin="10,548,0,0" VerticalAlignment="Top" Width="114" FontSize="48" Click="BtnOperator_Click"/>
-        <Button x:Name="btn5" Content="5" HorizontalAlignment="Left" Height="81" Margin="140,548,0,0" VerticalAlignment="Top" Width="114" FontSize="48" Click="BtnOperator_Click"/>
-        <Button x:Name="btn6" Content="6" HorizontalAlignment="Left" Height="81" Margin="269,548,0,0" VerticalAlignment="Top" Width="115" FontSize="48" Click="BtnOperator_Click"/>
-        <Button x:Name="btn7" Content="7" HorizontalAlignment="Left" Height="81" Margin="10,444,0,0" VerticalAlignment="Top" Width="114" FontSize="48" Click="BtnOperator_Click"/>
-        <Button x:Name="btn8" Content="8" HorizontalAlignment="Left" Height="81" Margin="140,444,0,0" VerticalAlignment="Top" Width="114" FontSize="48" Click="BtnOperator_Click"/>
-        <Button x:Name="btn9" Content="9" HorizontalAlignment="Left" Height="81" Margin="269,444,0,0" VerticalAlignment="Top" Width="115" FontSize="48" Click="BtnOperator_Click"/>
-        <Button x:Name="btnSuppr" Content="&lt;-" HorizontalAlignment="Left" Height="81" Margin="10,758,0,0" VerticalAlignment="Top" Width="114" FontSize="48" Click="BtnOperator_Click"/>
-        <Button x:Name="btnComma" Content="." HorizontalAlignment="Left" Height="81" Margin="269,758,0,0" VerticalAlignment="Top" Width="115" FontSize="48" Click="BtnOperator_Click"/>
-        <Button x:Name="btnPlus" Content="+" HorizontalAlignment="Left" Height="81" Margin="398,652,0,0" VerticalAlignment="Top" Width="114" FontSize="48" Click="BtnOperator_Click"/>
-        <Button x:Name="btnMinus" Content="-" HorizontalAlignment="Left" Height="81" Margin="398,548,0,0" VerticalAlignment="Top" Width="114" FontSize="48" Click="BtnOperator_Click"/>
-        <Button x:Name="btnMultiplication" Content="*" HorizontalAlignment="Left" Height="81" Margin="398,444,0,0" VerticalAlignment="Top" Width="114" FontSize="72" Click="BtnOperator_Click"/>
-        <Button x:Name="btnOpenBracket" Content="(" HorizontalAlignment="Left" Height="81" Margin="10,233,0,0" VerticalAlignment="Top" Width="114" FontSize="48" Click="BtnOperator_Click"/>
-        <Button x:Name="btnCloseBracket" Content=")" HorizontalAlignment="Left" Height="81" Margin="140,233,0,0" VerticalAlignment="Top" Width="114" FontSize="48" Click="BtnOperator_Click"/>
-        <Button x:Name="btnEquals" Content="=" HorizontalAlignment="Left" Height="81" Margin="398,758,0,0" VerticalAlignment="Top" Width="114" FontSize="48" Click="btnEquals_Click"/>
-        <Button x:Name="btnClearStep" Content="CE" HorizontalAlignment="Left" Height="81" Margin="269,233,0,0" VerticalAlignment="Top" Width="115" FontSize="48" Click="BtnClearStep_Click"/>
-        <Button x:Name="btnClear" Content="C" HorizontalAlignment="Left" Height="81" Margin="398,233,0,0" VerticalAlignment="Top" Width="114" FontSize="48" Click="BtnClear_Click"/>
-        <Button x:Name="btnClearHistory" Content="C" HorizontalAlignment="Left" Height="54" Margin="708,10,0,0" VerticalAlignment="Top" Width="74" FontSize="36" FontWeight="Bold" Click="btnClearHistory_Click"/>
-        <ListBox x:Name="lstBoxHistory" HorizontalAlignment="Left" Height="770" Margin="534,69,0,0" VerticalAlignment="Top" Width="248" FontSize="36"/>  
-        <Label x:Name="lblHistory" Content="Historique" HorizontalAlignment="Left" Height="59" Margin="534,10,0,0" VerticalAlignment="Top" Width="174" FontSize="36"/>
-        <Label x:Name="lblCalculationPrev" Content="" HorizontalAlignment="Left" Height="59" Margin="10,10,0,0" VerticalAlignment="Top" Width="502" FontSize="24"/>
-        <Rectangle Fill="Black" HorizontalAlignment="Left" Height="869" Margin="525,0,0,0" Stroke="Black" VerticalAlignment="Top" Width="1" OpacityMask="Black"/>
-        
+        Title="MainWindow" Height="600" Width="700" Background="#263041" >
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+        <Style x:Key="BasicButton" TargetType="Button">
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Background" Value="#353f53" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Margin" Value="2,2,2,2"/>
+
+        </Style>
+        <Style x:Key="NumberButton" TargetType="Button" BasedOn="{StaticResource BasicButton}">
+            <Setter Property="Background" Value="#485772" />
+        </Style>
+        <Style x:Key="EqualButton" TargetType="Button" BasedOn="{StaticResource BasicButton}">
+            <Setter Property="Background" Value="#199AAC" />
+        </Style>
+        <Style x:Key="DisabledButton" TargetType="Button" BasedOn="{StaticResource BasicButton}">
+            <Setter Property="Foreground" Value="#485772" />
+        </Style>
+        <Style x:Key="LightButton" TargetType="Button" BasedOn="{StaticResource BasicButton}">
+            <Setter Property="Foreground" Value="#199AAC" />
+            <Setter Property="Width" Value="auto"/>
+            <!--<Setter Property="Background" Value="#353f53"/>-->
+            <Setter Property="Background">
+                <Setter.Value>
+                    <SolidColorBrush Opacity="0" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>
+
+    <Grid Margin="10,10,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="6*"/>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="lblCalculationPrev" Content="" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" FontSize="24" />
+        <Label x:Name="lblCalculation" Content="0" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" FontSize="72"/>
+        <Grid Grid.Column="0" Grid.Row="2" Margin="10,10,10,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="btnOpenBracket" Content="("     Grid.Row="0" Grid.Column="0" Click="BtnOperator_Click" Style="{StaticResource BasicButton}"/>
+            <Button x:Name="btnCloseBracket" Content=")"    Grid.Row="0" Grid.Column="1" Click="BtnOperator_Click" Style="{StaticResource BasicButton}"/>
+            <Button x:Name="btnClearStep" Content="CE"      Grid.Row="0" Grid.Column="2" Click="BtnClearStep_Click" Style="{StaticResource BasicButton}"/>
+            <Button x:Name="btnClear" Content="C"           Grid.Row="0" Grid.Column="3" Click="BtnClear_Click" Style="{StaticResource BasicButton}"/>
+
+            <Button x:Name="btnSquare" Content="x²"         Grid.Row="1" Grid.Column="0" Style="{StaticResource DisabledButton}"/>
+            <Button x:Name="btnRoot" Content="Sqrt"         Grid.Row="1" Grid.Column="1" Style="{StaticResource DisabledButton}"/>
+            <Button x:Name="btnModulo" Content="%"          Grid.Row="1" Grid.Column="2" Style="{StaticResource DisabledButton}"/>
+            <Button x:Name="btnDivide" Content="/"          Grid.Row="1" Grid.Column="3" Style="{StaticResource BasicButton}"/>
+
+            <Button x:Name="btn7" Content="7"               Grid.Row="2" Grid.Column="0" Click="BtnOperator_Click" Style="{StaticResource NumberButton}"/>
+            <Button x:Name="btn8" Content="8"               Grid.Row="2" Grid.Column="1" Click="BtnOperator_Click" Style="{StaticResource NumberButton}"/>
+            <Button x:Name="btn9" Content="9"               Grid.Row="2" Grid.Column="2" Click="BtnOperator_Click" Style="{StaticResource NumberButton}"/>
+            <Button x:Name="btnMultiplication" Content="*"         Grid.Row="2" Grid.Column="3" Click="BtnOperator_Click" Style="{StaticResource BasicButton}"/>
+
+            <Button x:Name="btn4" Content="4"               Grid.Row="3" Grid.Column="0" Click="BtnOperator_Click" Style="{StaticResource NumberButton}"/>
+            <Button x:Name="btn5" Content="5"               Grid.Row="3" Grid.Column="1" Click="BtnOperator_Click" Style="{StaticResource NumberButton}"/>
+            <Button x:Name="btn6" Content="6"               Grid.Row="3" Grid.Column="2" Click="BtnOperator_Click" Style="{StaticResource NumberButton}"/>
+            <Button x:Name="btnMinus" Content="-"           Grid.Row="3" Grid.Column="3" Click="BtnOperator_Click" Style="{StaticResource BasicButton}"/>
+
+            <Button x:Name="btn1" Content="1"               Grid.Row="4" Grid.Column="0" Click="BtnOperator_Click" Style="{StaticResource NumberButton}"/>
+            <Button x:Name="btn2" Content="2"               Grid.Row="4" Grid.Column="1" Click="BtnOperator_Click" Style="{StaticResource NumberButton}"/>
+            <Button x:Name="btn3" Content="3"               Grid.Row="4" Grid.Column="2" Click="BtnOperator_Click" Style="{StaticResource NumberButton}"/>
+            <Button x:Name="btnPlus" Content="+"            Grid.Row="4" Grid.Column="3" Click="BtnOperator_Click" Style="{StaticResource BasicButton}"/>
+
+            <Button x:Name="btnSuppr" Content="←"           Grid.Row="5" Grid.Column="0" Click="BtnOperator_Click" Style="{StaticResource DisabledButton}"/>
+            <Button x:Name="btn0" Content="0"               Grid.Row="5" Grid.Column="1" Click="BtnOperator_Click" Style="{StaticResource NumberButton}"/>
+            <Button x:Name="btnComma" Content="."           Grid.Row="5" Grid.Column="2" Click="BtnOperator_Click" Style="{StaticResource BasicButton}"/>
+            <Button x:Name="btnEquals" Content="="          Grid.Row="5" Grid.Column="3" Click="btnEquals_Click" Style="{StaticResource EqualButton}"/>
+        </Grid>
+
+        <DockPanel Grid.Column="1" Grid.Row="0"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,0" >
+            <Label x:Name="lblHistory" Content="Historique" HorizontalAlignment="Left" FontSize="20"/>
+            <Button x:Name="btnClearHistory" Content="🗑" HorizontalAlignment="Right" Click="btnClearHistory_Click" Style="{StaticResource LightButton}"/>
+        </DockPanel>
+        <ListBox x:Name="lstBoxHistory" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Margin="10,5" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Background="#353f53" Foreground="White" BorderThickness="0" FontSize="20"/>
+
     </Grid>
 </Window>
